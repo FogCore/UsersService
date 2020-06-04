@@ -1,0 +1,8 @@
+**/*.proto
+**/.DS_Store
+**/.idea
+**/__pycache__
+**/README.md
+**/Dockerfile
+**/.dockerignore
+**/web_app_dev_config.py

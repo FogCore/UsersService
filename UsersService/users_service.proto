@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// The methods that the Users Service provides
+service UsersAPI {
+  rpc IsExist (User) returns (Response) {}  // Checks the existence of a user with the specified username
+  rpc Create (User) returns (ResponseWithUser) {}  // Creates a new user
+  rpc Verify (User) returns (ResponseWithUser) {}  // Verifies username and password
+  rpc Info (User) returns (ResponseWithUser) {}  // Returns information about the user
+}
+
+message Response {
+  int32 code = 1;
+  string message = 2;
+}
+
+message User {
+  string username = 1;
+  string password = 2;
+  string first_name = 3;
+  string last_name = 4;
+  bool admin = 5;
+}
+
+message ResponseWithUser {
+  Response status = 1;
+  User user = 2;
+}
