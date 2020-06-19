@@ -6,6 +6,8 @@ service UsersAPI {
   rpc Create (User) returns (ResponseWithUser) {}  // Creates a new user
   rpc Verify (User) returns (ResponseWithUser) {}  // Verifies username and password
   rpc Info (User) returns (ResponseWithUser) {}  // Returns information about the user
+  rpc UpdateUserData (User) returns (ResponseWithUser) {}  // Sets the full user name and administrator rights
+  rpc UpdatePassword (User) returns (Response) {}  // Sets new user password
 }
 
 message Response {

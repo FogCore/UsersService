@@ -5,7 +5,8 @@ from UsersService import users_service_pb2 as UsersService_dot_users__service__p
 
 
 class UsersAPIStub(object):
-    """Missing associated documentation comment in .proto file"""
+    """The methods that the Users Service provides
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -33,10 +34,21 @@ class UsersAPIStub(object):
                 request_serializer=UsersService_dot_users__service__pb2.User.SerializeToString,
                 response_deserializer=UsersService_dot_users__service__pb2.ResponseWithUser.FromString,
                 )
+        self.UpdateUserData = channel.unary_unary(
+                '/UsersAPI/UpdateUserData',
+                request_serializer=UsersService_dot_users__service__pb2.User.SerializeToString,
+                response_deserializer=UsersService_dot_users__service__pb2.ResponseWithUser.FromString,
+                )
+        self.UpdatePassword = channel.unary_unary(
+                '/UsersAPI/UpdatePassword',
+                request_serializer=UsersService_dot_users__service__pb2.User.SerializeToString,
+                response_deserializer=UsersService_dot_users__service__pb2.Response.FromString,
+                )
 
 
 class UsersAPIServicer(object):
-    """Missing associated documentation comment in .proto file"""
+    """The methods that the Users Service provides
+    """
 
     def IsExist(self, request, context):
         """Missing associated documentation comment in .proto file"""
@@ -57,6 +69,18 @@ class UsersAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Info(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserData(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePassword(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -85,6 +109,16 @@ def add_UsersAPIServicer_to_server(servicer, server):
                     request_deserializer=UsersService_dot_users__service__pb2.User.FromString,
                     response_serializer=UsersService_dot_users__service__pb2.ResponseWithUser.SerializeToString,
             ),
+            'UpdateUserData': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserData,
+                    request_deserializer=UsersService_dot_users__service__pb2.User.FromString,
+                    response_serializer=UsersService_dot_users__service__pb2.ResponseWithUser.SerializeToString,
+            ),
+            'UpdatePassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePassword,
+                    request_deserializer=UsersService_dot_users__service__pb2.User.FromString,
+                    response_serializer=UsersService_dot_users__service__pb2.Response.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'UsersAPI', rpc_method_handlers)
@@ -93,7 +127,8 @@ def add_UsersAPIServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class UsersAPI(object):
-    """Missing associated documentation comment in .proto file"""
+    """The methods that the Users Service provides
+    """
 
     @staticmethod
     def IsExist(request,
@@ -156,5 +191,37 @@ class UsersAPI(object):
         return grpc.experimental.unary_unary(request, target, '/UsersAPI/Info',
             UsersService_dot_users__service__pb2.User.SerializeToString,
             UsersService_dot_users__service__pb2.ResponseWithUser.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateUserData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/UsersAPI/UpdateUserData',
+            UsersService_dot_users__service__pb2.User.SerializeToString,
+            UsersService_dot_users__service__pb2.ResponseWithUser.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdatePassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/UsersAPI/UpdatePassword',
+            UsersService_dot_users__service__pb2.User.SerializeToString,
+            UsersService_dot_users__service__pb2.Response.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

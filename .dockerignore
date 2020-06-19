@@ -3,6 +3,8 @@
 **/.idea
 **/__pycache__
 **/README.md
-**/Dockerfile
-**/.dockerignore
-**/web_app_dev_config.py
+/Dockerfile
+/.dockerignore
+/MongoDB
+/.git
+/.gitignore

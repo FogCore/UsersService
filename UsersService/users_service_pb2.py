@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n UsersService/users_service.proto\")\n\x08Response\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"`\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x12\n\nfirst_name\x18\x03 \x01(\t\x12\x11\n\tlast_name\x18\x04 \x01(\t\x12\r\n\x05\x61\x64min\x18\x05 \x01(\x08\"B\n\x10ResponseWithUser\x12\x19\n\x06status\x18\x01 \x01(\x0b\x32\t.Response\x12\x13\n\x04user\x18\x02 \x01(\x0b\x32\x05.User2\x99\x01\n\x08UsersAPI\x12\x1d\n\x07IsExist\x12\x05.User\x1a\t.Response\"\x00\x12$\n\x06\x43reate\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x12$\n\x06Verify\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x12\"\n\x04Info\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x62\x06proto3'
+  serialized_pb=b'\n UsersService/users_service.proto\")\n\x08Response\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"`\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x12\n\nfirst_name\x18\x03 \x01(\t\x12\x11\n\tlast_name\x18\x04 \x01(\t\x12\r\n\x05\x61\x64min\x18\x05 \x01(\x08\"B\n\x10ResponseWithUser\x12\x19\n\x06status\x18\x01 \x01(\x0b\x32\t.Response\x12\x13\n\x04user\x18\x02 \x01(\x0b\x32\x05.User2\xed\x01\n\x08UsersAPI\x12\x1d\n\x07IsExist\x12\x05.User\x1a\t.Response\"\x00\x12$\n\x06\x43reate\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x12$\n\x06Verify\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x12\"\n\x04Info\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x12,\n\x0eUpdateUserData\x12\x05.User\x1a\x11.ResponseWithUser\"\x00\x12$\n\x0eUpdatePassword\x12\x05.User\x1a\t.Response\"\x00\x62\x06proto3'
 )
 
 
@@ -195,7 +195,7 @@ _USERSAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=246,
-  serialized_end=399,
+  serialized_end=483,
   methods=[
   _descriptor.MethodDescriptor(
     name='IsExist',
@@ -231,6 +231,24 @@ _USERSAPI = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_USER,
     output_type=_RESPONSEWITHUSER,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateUserData',
+    full_name='UsersAPI.UpdateUserData',
+    index=4,
+    containing_service=None,
+    input_type=_USER,
+    output_type=_RESPONSEWITHUSER,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdatePassword',
+    full_name='UsersAPI.UpdatePassword',
+    index=5,
+    containing_service=None,
+    input_type=_USER,
+    output_type=_RESPONSE,
     serialized_options=None,
   ),
 ])
