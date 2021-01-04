@@ -100,3 +100,4 @@ Returns a message of ResponseWithUser type.
 3. **status**=(**code**=422, **message**="Username parameter is required.")
 
 
+**The reported project was supported by RFBR, research project No. 18-07-01224**
